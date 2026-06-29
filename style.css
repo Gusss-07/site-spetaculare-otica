@@ -1,0 +1,266 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E RESETS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --azul-principal: #0f2027;   
+    --azul-degrade: #203a43;     
+    --dourado: #d4af37;          
+    --bg-claro: #f8f9fa;         
+    --texto-escuro: #333333;     
+    --texto-claro: #ffffff;      
+    --verde-whatsapp: #25d366;   
+    --instagram-cor: #e1306c;    
+}
+
+body {
+    background-color: var(--bg-claro);
+    color: var(--texto-escuro);
+    line-height: 1.6;
+    display: block;
+}
+
+/* Limitador unificado e rigoroso de layout móvel */
+main, header, footer, section {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+/* ==========================================================================
+   CABECALHO (HEADER) COM LOGO
+   ========================================================================== */
+header {
+    background: linear-gradient(to right, var(--azul-principal), var(--azul-degrade));
+    text-align: center;
+    padding: 25px 20px;
+    border-bottom: 4px solid var(--dourado);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container {
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-site {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   SEÇÕES GERAIS
+   ========================================================================== */
+section {
+    padding: 30px 20px;
+    border-bottom: 1px solid #eceff1;
+}
+
+section h2 {
+    font-size: 16pt;
+    color: var(--azul-principal);
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 12px;
+    border-left: 4px solid var(--dourado);
+}
+
+.subtitulo {
+    font-size: 11pt;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   SEÇÃO SOBRE E MAPS
+   ========================================================================== */
+.sobre p {
+    font-size: 11pt;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.btn-como-chegar {
+    display: table;
+    width: 100%;
+    background-color: var(--azul-principal);
+    color: var(--texto-claro);
+    text-align: center;
+    padding: 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12pt;
+    transition: background 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-como-chegar i {
+    margin-right: 8px;
+    color: var(--dourado);
+}
+
+.endereco-texto {
+    font-size: 9.5pt;
+    color: #777;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   SEÇÃO VITRINE (CSS SCROLL SNAP - TRAVA FÍSICA NATIVA)
+   ========================================================================== */
+.carrossel-viewport {
+    width: 100%;
+    overflow-x: auto; /* Permite rolar de forma nativa e extremamente fluida */
+    overflow-y: hidden;
+    position: relative;
+    padding: 10px 0;
+    /* Ativa o ímã de rolagem: faz o card parar cravado no meio ao soltar o dedo */
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: none; /* Oculta barra de rolagem no Firefox */
+    -webkit-overflow-scrolling: touch; /* Suavidade extrema garantida no iOS/Safari */
+}
+
+.carrossel-viewport::-webkit-scrollbar {
+    display: none; /* Oculta a barra de rolagem no Chrome e Safari */
+}
+
+.carrossel-track {
+    display: flex;
+    width: 100%; /* Deixamos dinâmico para respeitar o grid interno */
+}
+
+.card-produto {
+    width: 100%; /* Cada card pega exatamente a largura visível do container */
+    flex-shrink: 0; /* Impede o navegador de esmagar o tamanho do card */
+    scroll-snap-align: center; /* Alinha o card no centro exato da tela ao parar */
+    background-color: var(--bg-claro);
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.foto-container {
+    width: 100%;
+    height: 220px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.foto-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+    pointer-events: none;
+}
+
+.card-produto h3 {
+    font-size: 13pt;
+    color: var(--azul-principal);
+}
+
+/* ==========================================================================
+   SEÇÃO SERVIÇOS E WHATSAPP
+   ========================================================================== */
+.botoes-whatsapp {
+    display: block;
+}
+
+.btn-whats {
+    display: table;
+    width: 100%;
+    background-color: var(--verde-whatsapp);
+    color: var(--texto-claro);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12pt;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s;
+}
+
+.btn-whats i {
+    display: table-cell;
+    width: 30px;
+    font-size: 16pt;
+    vertical-align: middle;
+}
+
+.btn-whats span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.btn-whats:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: var(--azul-principal);
+    color: var(--texto-claro);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.redes-sociais {
+    margin-bottom: 25px;
+}
+
+.redes-sociais p {
+    font-size: 11pt;
+    margin-bottom: 10px;
+    color: #b0bec5;
+}
+
+.btn-instagram {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--texto-claro);
+    border: 1px solid var(--dourado);
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 11pt;
+}
+
+.btn-instagram i {
+    color: var(--instagram-cor);
+    margin-right: 5px;
+    font-size: 13pt;
+}
+
+.copyright {
+    font-size: 9pt;
+    color: #90a4ae;
+    border-top: 1px solid #263238;
+    padding-top: 15px;
+}
